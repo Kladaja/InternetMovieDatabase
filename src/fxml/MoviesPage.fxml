@@ -207,7 +207,7 @@
                         <Font name="Century Gothic" size="12.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="add_movies_btn" layoutX="267.0" layoutY="126.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Add" textFill="WHITE">
+                  <Button fx:id="add_movie_btn" layoutX="267.0" layoutY="126.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Add" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>

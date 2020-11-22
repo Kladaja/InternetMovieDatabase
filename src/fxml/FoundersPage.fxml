@@ -83,10 +83,10 @@
                      <children>
                         <TableView prefWidth="652.0">
                           <columns>
-                            <TableColumn prefWidth="70.0" text="ID" />
-                            <TableColumn prefWidth="200.0" text="First name" />
-                              <TableColumn prefWidth="200.0" text="Last name" />
-                              <TableColumn prefWidth="180.79998779296875" text="Studios" />
+                            <TableColumn fx:id="founders_id" prefWidth="70.0" text="ID" />
+                            <TableColumn fx:id="founders_first_name" prefWidth="200.0" text="First name" />
+                              <TableColumn fx:id="founders_last_name" prefWidth="200.0" text="Last name" />
+                              <TableColumn fx:id="studio_name" prefWidth="180.79998779296875" text="Studios" />
                           </columns>
                         </TableView>
                      </children>
@@ -105,12 +105,12 @@
                      </font>
                   </Label>
                   <Label layoutX="15.0" layoutY="41.0" text="Name" />
-                  <TextField layoutX="56.0" layoutY="37.0" prefHeight="25.0" prefWidth="200.0">
+                  <TextField fx:id="find_founder_name_txt" layoutX="56.0" layoutY="37.0" prefHeight="25.0" prefWidth="200.0">
                      <font>
                         <Font name="Century Gothic" size="12.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="266.0" layoutY="38.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Find" textFill="WHITE">
+                  <Button fx:id="find_founder_btn" layoutX="266.0" layoutY="38.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Find" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>
@@ -124,12 +124,12 @@
                      </font>
                   </Label>
                   <Label layoutX="15.0" layoutY="127.0" text="ID" />
-                  <TextField layoutX="44.0" layoutY="123.0" prefHeight="25.0" prefWidth="142.0">
+                  <TextField fx:id="delete_founder_id_txt" layoutX="44.0" layoutY="123.0" prefHeight="25.0" prefWidth="142.0">
                      <font>
                         <Font name="Century Gothic" size="12.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="196.0" layoutY="124.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
+                  <Button fx:id="edit_founder_btn" layoutX="196.0" layoutY="124.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>
@@ -137,7 +137,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="266.0" layoutY="124.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Delete" textFill="#9a36ff">
+                  <Button fx:id="delete_founder_btn" layoutX="266.0" layoutY="124.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Delete" textFill="#9a36ff">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>
@@ -155,18 +155,18 @@
                      </font>
                   </Label>
                   <Label layoutX="15.0" layoutY="49.0" text="First name" />
-                  <TextField layoutX="80.0" layoutY="45.0" prefHeight="25.0" prefWidth="175.0">
+                  <TextField fx:id="add_founder_first_name_txt" layoutX="80.0" layoutY="45.0" prefHeight="25.0" prefWidth="175.0">
                      <font>
                         <Font name="Century Gothic" size="12.0" />
                      </font>
                   </TextField>
                   <Label layoutX="15.0" layoutY="89.0" text="Last name" />
-                  <TextField layoutX="80.0" layoutY="85.0" prefHeight="25.0" prefWidth="175.0">
+                  <TextField fx:id="add_founder_last_name_txt" layoutX="80.0" layoutY="85.0" prefHeight="25.0" prefWidth="175.0">
                      <font>
                         <Font name="Century Gothic" size="12.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="267.0" layoutY="126.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Add" textFill="WHITE">
+                  <Button fx:id="add_founder_btn" layoutX="267.0" layoutY="126.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Add" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>
@@ -175,7 +175,7 @@
                      </cursor>
                   </Button>
                   <Label layoutX="15.0" layoutY="129.0" text="Studios" />
-                  <TextField layoutX="80.0" layoutY="125.0" prefHeight="25.0" prefWidth="175.0">
+                  <TextField fx:id="add_founder_studio_name_txt" layoutX="80.0" layoutY="125.0" prefHeight="25.0" prefWidth="175.0">
                      <font>
                         <Font name="Century Gothic" size="12.0" />
                      </font>

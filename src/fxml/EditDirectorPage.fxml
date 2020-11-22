@@ -22,17 +22,17 @@
                <font>
                   <Font name="Century Gothic Bold" size="12.0" />
                </font></Label>
-            <TextField layoutX="168.0" layoutY="118.0" prefHeight="25.0" prefWidth="215.0">
+            <Label fx:id="director_id_label" layoutX="168.0" layoutY="123.0" text="Director ID" textFill="WHITE">
                <font>
-                  <Font name="Century Gothic" size="12.0" />
+                  <Font name="Century Gothic Bold" size="12.0" />
                </font>
-            </TextField>
+            </Label>
             <Label layoutX="84.0" layoutY="163.0" text="First name" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="168.0" layoutY="158.0" prefHeight="25.0" prefWidth="215.0">
+            <TextField fx:id="edit_director_first_name_txt" layoutX="168.0" layoutY="158.0" prefHeight="25.0" prefWidth="215.0">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
@@ -42,7 +42,7 @@
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="168.0" layoutY="198.0" prefHeight="25.0" prefWidth="215.0">
+            <TextField fx:id="edit_director_label_name_txt" layoutX="168.0" layoutY="198.0" prefHeight="25.0" prefWidth="215.0">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
@@ -52,15 +52,15 @@
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="168.0" layoutY="238.0" prefHeight="25.0" prefWidth="215.0">
+            <TextField fx:id="edit_director_birth_date_txt" layoutX="168.0" layoutY="238.0" prefHeight="25.0" prefWidth="215.0">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
             </TextField>
             <Line endX="184.4000244140625" endY="-7.62939453125E-6" layoutX="197.0" layoutY="83.0" startX="-100.0" stroke="WHITE" strokeWidth="1.5" />
-            <Button layoutX="199.0" layoutY="299.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
+            <Button fx:id="finish_edit_director_btn" layoutX="199.0" layoutY="299.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
                <font>
-                  <Font name="Century Gothic" size="12.0" />
+                  <Font name="Century Gothic Bold" size="12.0" />
                </font>
             </Button>
          </children>
