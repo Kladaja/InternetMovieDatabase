@@ -1,0 +1,5 @@
+base:  #8000ff
+
+base-ligth: #9a36ff
+
+base-dark: #6c00d9
