@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainPageController">
    <children>
       <Pane prefHeight="550.0" prefWidth="190.0" style="-fx-background-color: #7f0ef0#8000ff;">
          <children>
@@ -18,12 +18,12 @@
                </font>
             </Label>
             <Line endX="-19.400009155273438" layoutX="101.0" layoutY="135.0" startX="-100.0" stroke="WHITE" strokeWidth="1.5" />
-            <Label layoutX="49.0" layoutY="182.0" text="Choose a category:" textAlignment="CENTER" textFill="WHITE">
+            <Label layoutX="41.0" layoutY="182.0" text="Choose a category:" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="11.0" />
+                  <Font name="Century Gothic" size="11.0" />
                </font>
             </Label>
-            <Button fx:id="movies_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="228.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Movies" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="movies_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="228.0" mnemonicParsing="false" onAction="#movies_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Movies" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="13.0" />
                </font>
@@ -31,7 +31,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="series_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="278.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Series" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="series_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="278.0" mnemonicParsing="false" onAction="#series_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Series" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="13.0" />
                </font>
@@ -39,7 +39,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="actors_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="328.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Actors" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="actors_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="328.0" mnemonicParsing="false" onAction="#actors_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Actors" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="13.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="directors_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="378.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Directors" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="directors_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="378.0" mnemonicParsing="false" onAction="#directors_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Directors" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="13.0" />
                </font>
@@ -55,7 +55,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="studios_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="428.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Studios" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="studios_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="428.0" mnemonicParsing="false" onAction="#studios_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Studios" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="13.0" />
                </font>
