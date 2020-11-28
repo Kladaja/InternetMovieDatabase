@@ -77,11 +77,11 @@
                </font>
             </Label>
             <Line endX="549.5999755859375" endY="7.62939453125E-6" layoutX="135.0" layoutY="61.0" startX="-100.0" stroke="#8000ff" strokeWidth="1.5" />
-            <ScrollPane layoutX="34.0" layoutY="90.0" prefHeight="218.0" prefWidth="652.0">
+            <ScrollPane layoutX="34.0" layoutY="90.0" prefHeight="250.0" prefWidth="652.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="248.0" prefWidth="649.0">
                      <children>
-                        <TableView fx:id="movie_table_view" prefHeight="220.0" prefWidth="652.0">
+                        <TableView fx:id="movie_table_view" prefHeight="248.0" prefWidth="649.0">
                           <columns>
                             <TableColumn fx:id="movie_id" prefWidth="70.0" text="ID" />
                             <TableColumn fx:id="movie_title" prefWidth="300.0" text="Title" />
@@ -93,7 +93,7 @@
                   </AnchorPane>
               </content>
             </ScrollPane>
-            <Button fx:id="find_actors_in_movie_btn" layoutX="300.0" layoutY="335.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Find actors" textFill="#9a36ff">
+            <Button fx:id="advanced_search_btn" layoutX="194.0" layoutY="26.0" mnemonicParsing="false" onAction="#advanced_search_btn_action" prefHeight="23.0" prefWidth="142.0" style="-fx-background-color: #9a36ff;" text="Advanced search" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
@@ -101,31 +101,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="find_directors_for_movie_btn" layoutX="434.0" layoutY="335.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Find directors" textFill="#9a36ff">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="find_studios_for_movie_btn" layoutX="566.0" layoutY="335.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Find studio" textFill="#9a36ff">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Label layoutX="34.0" layoutY="339.0" text="ID:">
-               <font>
-                  <Font name="Century Gothic" size="12.0" />
-               </font></Label>
-            <TextField fx:id="find_movie_id_txt" layoutX="63.0" layoutY="335.0" prefHeight="25.0" prefWidth="215.0">
-               <font>
-                  <Font name="Century Gothic" size="12.0" />
-               </font>
-            </TextField>
             <Button fx:id="add_actors_to_movie_btn" layoutX="34.0" layoutY="26.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Add actors to movies" textFill="#9a36ff">
                <font>
                   <Font name="Century Gothic Bold" size="12.0" />
@@ -154,7 +129,7 @@
                         <Font name="Century Gothic" size="12.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="find_movie_btn" layoutX="266.0" layoutY="38.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Find" textFill="WHITE">
+                  <Button fx:id="find_movie_btn" layoutX="266.0" layoutY="38.0" mnemonicParsing="false" onAction="#find_movie_btn_action" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Find" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>
@@ -176,7 +151,7 @@
                         <Font name="Century Gothic" size="12.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="edit_movie_btn" layoutX="196.0" layoutY="124.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
+                  <Button fx:id="edit_movie_btn" layoutX="196.0" layoutY="124.0" mnemonicParsing="false" onAction="#edit_movie_btn_action" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>
@@ -184,7 +159,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="delete_movie_btn" layoutX="266.0" layoutY="124.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Delete" textFill="#9a36ff">
+                  <Button fx:id="delete_movie_btn" layoutX="266.0" layoutY="124.0" mnemonicParsing="false" onAction="#delete_movie_btn_action" prefWidth="60.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Delete" textFill="#9a36ff">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>
@@ -219,7 +194,7 @@
                         <Font name="Century Gothic" size="12.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="add_movie_btn" layoutX="267.0" layoutY="126.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Add" textFill="WHITE">
+                  <Button fx:id="add_movie_btn" layoutX="267.0" layoutY="126.0" mnemonicParsing="false" onAction="#add_movie_btn_action" prefWidth="60.0" style="-fx-background-color: #9a36ff;" text="Add" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Bold" size="12.0" />
                      </font>

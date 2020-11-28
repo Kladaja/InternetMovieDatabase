@@ -89,6 +89,8 @@ public class ActorsPageController implements Initializable {
 
     }
 
+    // Menu buttons
+
     public void movies_btn_action(ActionEvent event){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/MoviesPage.fxml"));
@@ -100,7 +102,6 @@ public class ActorsPageController implements Initializable {
             e.printStackTrace();
         }
     }
-
     public void series_btn_action(ActionEvent event){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/SeriesPage.fxml"));;
@@ -112,7 +113,6 @@ public class ActorsPageController implements Initializable {
             e.printStackTrace();
         }
     }
-
     public void actors_btn_action(ActionEvent event){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/ActorsPage.fxml"));;
@@ -124,7 +124,6 @@ public class ActorsPageController implements Initializable {
             e.printStackTrace();
         }
     }
-
     public void directors_btn_action(ActionEvent event){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/DirectorsPage.fxml"));;
@@ -137,7 +136,6 @@ public class ActorsPageController implements Initializable {
             e.printStackTrace();
         }
     }
-
     public void studios_btn_action(ActionEvent event){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/StudiosPage.fxml"));;

@@ -175,10 +175,28 @@ INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date)
 INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date) VALUES(NULL, 'Clint', 'Eastwood', '1930-05-31');
 INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date) VALUES(NULL, 'Colin', 'Firth', '1960-09-10');
 INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date) VALUES(NULL, 'Kate', 'Winslet', '1975-10-05');
+INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date) VALUES(NULL, 'Daniel', 'Radcliffe', '1989-10-05');
+INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date) VALUES(NULL, 'Emma', 'Watson', '1990-04-15');
+INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date) VALUES(NULL, 'Rupert', 'Grint', '1988-08-24');
+INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date) VALUES(NULL, 'Anne', 'Hathaway', '1982-11-12');
+INSERT INTO actor(actor_id, actor_first_name, actor_last_name, actor_birth_date) VALUES(NULL, 'Meryl ', 'Streep', '1949-06-22');
 
 
 INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Lars', 'von Trier', '1956-04-30');
 INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Darren', 'Aronofsky', '1969-02-12');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'James', 'Cameron', '1954-08-16');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Martin', 'Scorsese', '1942-11-17');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Quentin', 'Tarantino', '1963-03-27');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Gary', 'Ross', '1956-11-03');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Chris', 'Columbus', '1958-09-10');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Robert', 'Mulligan', '1925-08-23');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Baz', 'Luhrman', '1962-09-17');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Tony', 'Scott', '1944-06-21');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Mike', 'Cahill', '1979-07-05');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Peter', 'Weir', '1944-08-21');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Clint', 'Eastwood', '1930-05-31');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Tim', 'Miller', '1964-10-10');
+INSERT INTO director (director_id, director_first_name, director_last_name, director_birth_date) VALUES (NULL, 'Vincent', 'Ward', '1956-02-16');
 
 
 INSERT INTO movie (movie_id, movie_title, movie_genre, movie_length) VALUES (NULL, 'Dogville', 'Drama', '178');
@@ -206,6 +224,7 @@ INSERT INTO movie (movie_id, movie_title, movie_genre, movie_length) VALUES (NUL
 INSERT INTO movie (movie_id, movie_title, movie_genre, movie_length) VALUES (NULL, 'Coco', 'Animation', '109');
 INSERT INTO movie (movie_id, movie_title, movie_genre, movie_length) VALUES (NULL, 'Titanic', 'Romance', '194');
 INSERT INTO movie (movie_id, movie_title, movie_genre, movie_length) VALUES (NULL, 'Bird Box', 'Horror', '124');
+INSERT INTO movie (movie_id, movie_title, movie_genre, movie_length) VALUES (NULL, 'The Devil Wears Prada', 'Comedy', '109');
 
 
 INSERT INTO series (series_id, series_title, series_genre, series_seasons) VALUES (NULL, 'American Horror Story', 'Horror', '10');
@@ -228,6 +247,24 @@ INSERT INTO movie_acting(actor_id, leading_role, movie_id) VALUES ('10', '0', '1
 
 INSERT INTO movie_directing (director_id, movie_id) VALUES ('1', '1');
 INSERT INTO movie_directing (director_id, movie_id) VALUES ('2', '2');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('2', '3');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('2', '4');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('8', '7');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('9', '8');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('5', '9');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('4', '10');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('5', '11');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('6', '12');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('7', '13');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('10', '14');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('11', '16');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('11', '17');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('12', '18');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('5', '19');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('13', '20');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('14', '21');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('15', '22');
+INSERT INTO movie_directing (director_id, movie_id) VALUES ('3', '24');
 
 
 -- -------------------- Jogok --------------------

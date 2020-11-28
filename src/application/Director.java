@@ -9,7 +9,6 @@ public class Director {
     private Date director_birth_date;
 
     public Director() {}
-
     public Director(int director_id, String director_first_name, String director_last_name, Date director_birth_date) {
         this.director_id = director_id;
         this.director_first_name = director_first_name;

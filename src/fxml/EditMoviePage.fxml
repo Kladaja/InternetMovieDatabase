@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #9a36ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #9a36ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EditMoviePageController">
    <children>
       <Pane layoutX="10.0" layoutY="10.0" prefHeight="380.0" prefWidth="480.0" style="-fx-background-color: #6c00d9;">
          <children>
@@ -22,11 +22,6 @@
                <font>
                   <Font name="Century Gothic Bold" size="12.0" />
                </font></Label>
-            <Label fx:id="movie_id_label" layoutX="168.0" layoutY="123.0" text="Movie ID" textFill="WHITE">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Label>
             <Label layoutX="105.0" layoutY="163.0" text="Title" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="12.0" />
@@ -58,11 +53,19 @@
                </font>
             </TextField>
             <Line endX="184.4000244140625" endY="-7.62939453125E-6" layoutX="197.0" layoutY="83.0" startX="-100.0" stroke="WHITE" strokeWidth="1.5" />
-            <Button fx:id="finish_edit_movie_btn" layoutX="199.0" layoutY="303.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
+            <Button fx:id="finish_edit_movie_btn" layoutX="199.0" layoutY="303.0" mnemonicParsing="false" onAction="#finish_edit_movie_btn_action" prefWidth="80.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
                <font>
                   <Font name="Century Gothic Bold" size="12.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
+            <TextField fx:id="edit_movie_id_txt" layoutX="168.0" layoutY="118.0" prefHeight="25.0" prefWidth="215.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
          </children>
       </Pane>
    </children>

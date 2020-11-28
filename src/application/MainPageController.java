@@ -37,7 +37,7 @@ public class MainPageController implements Initializable {
 
     public void series_btn_action(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/SeriesPage.fxml"));;
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/SeriesPage.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();
@@ -49,7 +49,7 @@ public class MainPageController implements Initializable {
 
     public void actors_btn_action(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/ActorsPage.fxml"));;
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/ActorsPage.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();
@@ -61,7 +61,7 @@ public class MainPageController implements Initializable {
 
     public void directors_btn_action(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/DirectorsPage.fxml"));;
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/DirectorsPage.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();
@@ -73,7 +73,7 @@ public class MainPageController implements Initializable {
 
     public void studios_btn_action(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/StudiosPage.fxml"));;
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/StudiosPage.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();

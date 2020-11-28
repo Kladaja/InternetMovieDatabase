@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="900.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdvancedMoviesPageController">
+   <children>
+      <Pane prefHeight="550.0" prefWidth="190.0" style="-fx-background-color: #7f0ef0#8000ff;">
+         <children>
+            <Label layoutX="59.0" layoutY="60.0" text="IMDb" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="28.0" />
+               </font>
+            </Label>
+            <Line endX="-19.400009155273438" layoutX="101.0" layoutY="135.0" startX="-100.0" stroke="WHITE" strokeWidth="1.5" />
+            <Label layoutX="41.0" layoutY="182.0" text="Choose a category:" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="11.0" />
+               </font>
+            </Label>
+            <Button fx:id="movies_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="228.0" mnemonicParsing="false" onAction="#movies_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Movies" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="series_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="278.0" mnemonicParsing="false" onAction="#series_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Series" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="actors_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="328.0" mnemonicParsing="false" onAction="#actors_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Actors" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="directors_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="378.0" mnemonicParsing="false" onAction="#directors_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Directors" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="studios_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="428.0" mnemonicParsing="false" onAction="#studios_btn_action" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #9329ff;" text="Studios" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="193.0" prefHeight="329.0" prefWidth="720.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="594.0" layoutY="25.0" text="Movies" textFill="#8000ff">
+               <font>
+                  <Font name="Century Gothic Bold" size="22.0" />
+               </font>
+            </Label>
+            <Line endX="549.5999755859375" endY="7.62939453125E-6" layoutX="135.0" layoutY="61.0" startX="-100.0" stroke="#8000ff" strokeWidth="1.5" />
+            <ScrollPane layoutX="34.0" layoutY="90.0" prefHeight="200.0" prefWidth="652.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="198.0" prefWidth="649.0">
+                     <children>
+                        <TableView fx:id="movie_table_view" prefHeight="248.0" prefWidth="642.0">
+                          <columns>
+                            <TableColumn fx:id="movie_id" prefWidth="70.0" text="ID" />
+                            <TableColumn fx:id="movie_title" prefWidth="300.0" text="Title" />
+                              <TableColumn fx:id="movie_genre" prefWidth="140.0" text="Genre" />
+                              <TableColumn fx:id="movie_length" prefWidth="140.0" text="Length" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <Pane layoutX="193.0" layoutY="330.0" prefHeight="220.0" prefWidth="720.0" style="-fx-background-color: #f8f8f8;">
+         <children>
+            <Label layoutX="35.0" layoutY="36.0" text="Title">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="find_movie_title_txt" layoutX="66.0" layoutY="33.0" prefHeight="25.0" prefWidth="190.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="find_movie_btn" layoutX="277.0" layoutY="151.0" mnemonicParsing="false" onAction="#find_movie_btn_action" prefHeight="23.0" prefWidth="236.0" style="-fx-background-color: #9a36ff;" text="Find" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="549.0" layoutY="37.0" text="Edit or delete movies" textFill="#8000ff">
+               <font>
+                  <Font name="Century Gothic Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="549.0" layoutY="78.0" text="ID">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="delete_movie_id_txt" layoutX="565.0" layoutY="71.0" prefHeight="25.0" prefWidth="126.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="edit_movie_btn" layoutX="549.0" layoutY="111.0" mnemonicParsing="false" onAction="#edit_movie_btn_action" prefHeight="23.0" prefWidth="142.0" style="-fx-background-color: #9a36ff;" text="Edit" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="delete_movie_btn" layoutX="549.0" layoutY="150.0" mnemonicParsing="false" onAction="#delete_movie_btn_action" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ffffff; -fx-border-color: #9a36ff;" text="Delete" textFill="#9a36ff">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="35.0" layoutY="78.0" text="Genre">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="find_movie_genre_txt" layoutX="84.0" layoutY="71.0" prefHeight="25.0" prefWidth="172.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="35.0" layoutY="115.0" prefHeight="15.0" prefWidth="65.0" text="Min length">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="find_movie_min_length_txt" layoutX="115.0" layoutY="110.0" prefHeight="25.0" prefWidth="142.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="270.0" layoutY="38.0" text="Actor">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="find_movie_actor_txt" layoutX="316.0" layoutY="33.0" prefHeight="25.0" prefWidth="197.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="35.0" layoutY="157.0" text="Max length">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="find_movie_max_length_txt" layoutX="115.0" layoutY="150.0" prefHeight="25.0" prefWidth="142.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="270.0" layoutY="78.0" text="Director">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="find_movie_director_txt" layoutX="331.0" layoutY="71.0" prefHeight="25.0" prefWidth="182.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="270.0" layoutY="115.0" text="Studio name">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="find_movie_studio_txt" layoutX="354.0" layoutY="110.0" prefHeight="25.0" prefWidth="158.0">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>

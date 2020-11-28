@@ -16,30 +16,34 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class MoviesPageController implements DAO, Initializable {
+public class AdvancedMoviesPageController implements DAO, Initializable {
     @FXML private Button movies_btn;
     @FXML private Button series_btn;
     @FXML private Button actors_btn;
     @FXML private Button directors_btn;
     @FXML private Button studios_btn;
-    @FXML protected TableView<Movie> movie_table_view;
-    @FXML protected TableColumn<Movie, Integer> movie_id;
-    @FXML protected TableColumn<Movie, String> movie_title;
-    @FXML protected TableColumn<Movie, String> movie_genre;
-    @FXML protected TableColumn<Movie, Integer> movie_length;
-    @FXML private Button add_actors_to_movie_btn;
+    @FXML private TableView<Movie> movie_table_view;
+    @FXML private TableColumn<Movie, Integer> movie_id;
+    @FXML private TableColumn<Movie, String> movie_title;
+    @FXML private TableColumn<Movie, String> movie_genre;
+    @FXML private TableColumn<Movie, Integer> movie_length;
     @FXML private TextField find_movie_title_txt;
     @FXML private Button find_movie_btn;
     @FXML private TextField delete_movie_id_txt;
     @FXML private Button edit_movie_btn;
     @FXML private Button delete_movie_btn;
-    @FXML private TextField add_movie_title_txt;
-    @FXML private TextField add_movie_genre_txt;
-    @FXML private Button add_movie_btn;
-    @FXML private TextField add_movie_length_txt;
+    @FXML private TextField find_movie_genre_txt;
+    @FXML private TextField find_movie_min_length_txt;
+    @FXML private TextField find_movie_actor_txt;
+    @FXML private TextField find_movie_max_length_txt;
+    @FXML private TextField find_movie_director_txt;
+    @FXML private TextField find_movie_studio_txt;
 
     private Connection connection;
     private ObservableList<Movie> observableList;
@@ -142,33 +146,46 @@ public class MoviesPageController implements DAO, Initializable {
     // Basic queries
 
     public void find_movie_btn_action(ActionEvent event) {
-        if (!find_movie_title_txt.getText().isEmpty()) {
-            String find = find_movie_title_txt.getText();
-            String sql = "SELECT * FROM movie WHERE movie_title LIKE '%" + find + "%'";
-            populateTableView(sql);
-        }
-    }
-    public void add_movie_btn_action(ActionEvent event) {
-        try {
-            String title = add_movie_title_txt.getText();
-            String genre = add_movie_genre_txt.getText();
-            String length = add_movie_length_txt.getText();
-
-            String insert = "INSERT INTO movie (movie_id, movie_title, movie_genre, movie_length) VALUES (NULL, '" + title + "', '" + genre + "', '" + length + "');";
-
-            connection = dbConnector.getConnection();
-            preparedStatement = connection.prepareStatement(insert);
-            preparedStatement.executeUpdate();
-
-            add_movie_title_txt.clear();
-            add_movie_genre_txt.clear();
-            add_movie_length_txt.clear();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
         String sql = "SELECT * FROM movie";
+        boolean where = false;
+        if (!find_movie_title_txt.getText().isEmpty()) {
+            sql += where ? "" : " WHERE";
+            where = true;
+            sql += " movie_title LIKE '%" + find_movie_title_txt.getText() + "%'";
+        }
+        if (!find_movie_genre_txt.getText().isEmpty()) {
+            sql += where ? " AND" : " WHERE";
+            where = true;
+            sql += " movie_genre LIKE '%" + find_movie_genre_txt.getText() + "%'";
+
+        }
+        if (!find_movie_min_length_txt.getText().isEmpty()) {
+            sql += where ? " AND" : " WHERE";
+            where = true;
+            sql += " movie_length > " + find_movie_min_length_txt.getText();
+        }
+        if (!find_movie_max_length_txt.getText().isEmpty()) {
+            sql += where ? " AND" : " WHERE";
+            where = true;
+            sql += " movie_length < " + find_movie_max_length_txt.getText();
+        }
+        if (!find_movie_actor_txt.getText().isEmpty()) {
+            sql += where ? " AND" : " WHERE";
+            where = true;
+            sql += " movie_id IN ( SELECT movie_id FROM movie_acting WHERE actor_id = ( SELECT actor_id FROM actor WHERE actor_first_name LIKE '%" + find_movie_actor_txt.getText() + "%' OR actor_last_name LIKE '%" + find_movie_actor_txt.getText() + "%' GROUP BY actor_first_name) GROUP BY movie_title)";
+        }
+        if (!find_movie_director_txt.getText().isEmpty()) {
+            sql += where ? " AND" : " WHERE";
+            where = true;
+            sql += " movie_id IN ( SELECT movie_id FROM movie_directing WHERE director_id = ( SELECT director_id FROM director WHERE director_first_name LIKE '%" + find_movie_director_txt.getText() + "%' OR director_last_name LIKE '%" + find_movie_director_txt.getText() + "%' GROUP BY director_first_name) GROUP BY movie_title)";
+        }
+        if (!find_movie_studio_txt.getText().isEmpty()) {
+            sql += where ? " AND" : " WHERE";
+            where = true;
+            sql += " movie_id IN ( SELECT movie_id FROM movie_producing WHERE studio_id = ( SELECT studio_id FROM studio WHERE studio_name LIKE '%" + find_movie_studio_txt.getText() + "%' GROUP BY studio_name) GROUP BY movie_title)";
+        }
+
+        System.out.println(sql);
         populateTableView(sql);
     }
     public void delete_movie_btn_action(ActionEvent event) {
@@ -193,19 +210,6 @@ public class MoviesPageController implements DAO, Initializable {
     public void edit_movie_btn_action(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EditMoviePage.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-            MoviesPage.stg.close();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void advanced_search_btn_action(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/AdvancedMoviesPage.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
